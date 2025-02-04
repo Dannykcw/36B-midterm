@@ -14,7 +14,6 @@ public:
     int get() const;
     void set(int n);
     void print() const;
-    int compare(const Integer& n) const;
     int compare(const Integer n) const;
 };
 
@@ -86,5 +85,9 @@ int main()
     Integer num3(num1);
     std::cout << "printing num3's value:" << std::endl;
     num3.print();
+
+    std::cout << "Compare num1 and num3: " << num1.compare(num3) << std::endl; // Should print 0
+    std::cout << "Compare num1 and num2: " << num1.compare(num2) << std::endl; // Should print -1
+    std::cout << "Compare num2 and num1: " << num2.compare(num1) << std::endl; // Should print 1
     return 0;
 }

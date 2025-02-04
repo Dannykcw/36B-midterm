@@ -9,7 +9,7 @@ private:
 public:
     Integer();
     Integer(int n);
-    Integer(const Integer& n);
+    Integer(const Integer &n);
     ~Integer();
     int get() const;
     void set(int n);
@@ -27,7 +27,6 @@ Integer::Integer(int n)
 {
     num = n;
 }
-
 
 Integer::Integer(const Integer &n)
 {
@@ -74,8 +73,6 @@ int main()
     Integer num1;
     Integer num2;
     std::cout << "Starting value of num1, num2 , and num3: " << std::endl;
-    // member "Integer::num" (declared at line 5) is inaccessibleC/C++(265)
-    // num1.num = 0;
     num1.set(5);
     std::cout << "printing num1's value:" << std::endl;
     num1.print();
@@ -86,7 +83,9 @@ int main()
     std::cout << "printing num3's value:" << std::endl;
     num3.print();
 
-    std::cout << 
+    std::cout << "Compare num1 and num3: " << num1.compare(num3) << std::endl; // Should print 0
+    std::cout << "Compare num1 and num2: " << num1.compare(num2) << std::endl; // Should print -1
+    std::cout << "Compare num2 and num1: " << num2.compare(num1) << std::endl; // Should print 1
 
     return 0;
 }
