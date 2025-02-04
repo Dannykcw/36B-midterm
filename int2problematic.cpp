@@ -103,6 +103,12 @@ int main()
     std::cout << "printing num3's value:" << std::endl;
     num3.print();
 
+    // more than one instance of overloaded function "Integer::compare" matches the argument list:C/C++(308)
+    //intcopy.cpp(106, 52): function "Integer::compare(const Integer &n) const" (declared at line 57)
+    // intcopy.cpp(106, 52): function "Integer::compare(Integer n) const" (declared at line 73)
+    // intcopy.cpp(106, 52): argument types are: (Integer)
+    // intcopy.cpp(106, 52): object type is: Integer
+
     std::cout << "Compare num1 and num3: " << num1.compare(num3) << std::endl; // Should print 0
     std::cout << "Compare num1 and num2: " << num1.compare(num2) << std::endl; // Should print -1
     std::cout << "Compare num2 and num1: " << num2.compare(num1) << std::endl; // Should print 1
